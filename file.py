@@ -1,9 +1,6 @@
 import os
 import shutil
 
-# move up the directory tree by one folder
-os.chdir(os.path.dirname(os.getcwd()))
-
 # list of extentions for sorting
 videos = ['.MP4', '.MOV', '.WMV', '.FLV', '.AVCHD']
 images = ['.JPEG', '.JPG', '.PNG', '.TIFF', '.BMP', '.RAW', '.ARW', '.NEF', '.WMF', '.TGA', '.JFIF', '.PSD', '.TIF', '.EPS']
