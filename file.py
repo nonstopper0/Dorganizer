@@ -1,8 +1,6 @@
 import os
 import shutil
 
-print('for the easiest method, please place the entire application folder within your downloads folder')
-
 # move up the directory tree by one folder
 os.chdir(os.path.dirname(os.getcwd()))
 
@@ -12,12 +10,13 @@ images = ['.JPEG', '.JPG', '.PNG', '.TIFF', '.BMP', '.RAW', '.ARW', '.NEF', '.WM
 compressed = ['.7Z', '.ZIP', '.ARJ', '.DEB', '.PKG', '.TAR.GZ', '.Z', '.RAR', '.RPM']
 applications = ['.APP', '.EXE', '.MSI']
 music = ['.MP3', '.WAV', '.WMA', '.M4A', '.AAC']
-os.mkdir(os.path.join(os.getcwd(), 'Videos'))
-os.mkdir(os.path.join(os.getcwd(), 'Images'))
-os.mkdir(os.path.join(os.getcwd(), 'Music'))
-os.mkdir(os.path.join(os.getcwd(), 'Applications'))
-os.mkdir(os.path.join(os.getcwd(), 'Compressed'))
-os.mkdir(os.path.join(os.getcwd(), 'Files'))
+directories = ['Videos', 'Images', 'Music', 'Applications', 'Compressed', 'Files']
+for direc in directories:
+    try:
+        os.mkdir(os.path.join(os.getcwd(), direc))
+    except: 
+        print('directories have already been created')
+
 
 
 # a list of all the extensions in the folder, keeps track of what directories have been made
@@ -53,11 +52,8 @@ for file in os.listdir(os.getcwd()):
         if directory == False: 
             shutil.move(file_path, os.path.join(os.getcwd(), 'Files'))
             
-        # if extension_path not in extensions:
-        #     extensions.append(extension_path)
-        #     os.mkdir(os.path.join(os.getcwd(), directory))
-    
-    elif (extension == ''):
-        print('folder found', file)
+        # keep a tab of the extensions
+        if extension not in extensions:
+            extensions.append(extension)
 
-print(f"files found: {i}\nextensions found: {extensions}")
+print(f"files moved: {i}\nextensions found: {extensions}")
