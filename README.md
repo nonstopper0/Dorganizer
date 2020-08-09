@@ -2,7 +2,7 @@
 
 A small python program that converts your messy download folder into a beautifully organized folder.
 
-![Foo](https://www.tenforums.com/geek/gars/images/2/types/thumb__ownloads_folder.png)]
+![Foo](https://www.tenforums.com/geek/gars/images/2/types/thumb__ownloads_folder.png)
 
 ## Usage
 
